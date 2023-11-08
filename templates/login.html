@@ -58,6 +58,10 @@
 						<i class="fa fa-github" style="font-size:48px;padding: 5px"></i>
 						github
 					</a>
+					<a  onclick="hello_google()" class="btn-google m-t-20">
+						<img src="{% static 'images/icons/icon-google.png' %}" alt="google_auth_icon">
+						Google
+					</a>
 
 					<div class="w-full text-center p-t-55">
 
@@ -88,9 +92,17 @@
 <form action="/accounts/github/login/" method="post" id="github_form">
     {% csrf_token %}
 </form>
+<form action="/accounts/google/login/" method="post" id="google_form">
+    {% csrf_token %}
+</form>
     <script>
         function hello() {
             document.getElementById('github_form').submit()
+        }
+    </script>
+	<script>
+        function hello_google() {
+            document.getElementById('google_form').submit()
         }
     </script>
 </body>
